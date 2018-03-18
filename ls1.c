@@ -1,3 +1,5 @@
+/* this is first version of ls*/
+
 #include <stdio.h>
 #include <sys/types.h>
 #include <dirent.h>

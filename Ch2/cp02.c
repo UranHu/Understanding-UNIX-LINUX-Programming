@@ -1,13 +1,14 @@
-#include <cstdio>
-#include <cstdlib>
+/* cp03.c has -i opetion */
+
+#include <stdio.h>
+#include <stdlib.h>
 #include <fcntl.h>
 #include <string.h>
 #include <unistd.h>
+#include <getopt.h>
 
 #define BUFFERSIZE 4096
 #define COPYMODE 0644
-
-using namespace std;
 
 void oops(char *, char const *);
 
@@ -19,8 +20,9 @@ int main(int argc, char const *argv[])
 		fprintf( stderr, "usage: %s source destination\n", *argv);
 		exit(1);
 	}
-	if (strcmp(argv[1], argv[2]) == 0)
-		oops("same", "");
+	if (strcmp(argv[1], argv[2]) == 0){                                         
+		fprintf(stderr, "'%s' and '%s' are the same file\n", argv[1], argv[2]);
+	}
 	if ((in_fd = open(argv[1], O_RDONLY)) == -1)
 		oops("Cannot open ", argv[1]);
 

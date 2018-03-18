@@ -1,13 +1,12 @@
-#include <cstdio>
+#include <stdio.h>
 #include <fcntl.h>
 #include <unistd.h>
 #include <utmp.h>
-#include <cstdlib>
+#include <stdlib.h>
 #include <time.h>
 
 #define SHOWHOST
 
-using namespace std;
 void show_info(struct utmp *);
 void show_time(time_t);
 

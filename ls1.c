@@ -2,7 +2,6 @@
 #include <sys/types.h>
 #include <dirent.h>
 
-
 void do_ls(char const *);
 
 int main(int argc, char const *argv[])
